@@ -1,0 +1,15 @@
+{
+  "name": "lukaszgolabek/newsletter-forms-and-export",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "Newsletter\\Core\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "webites"
+    }
+  ],
+  "require": {}
+}

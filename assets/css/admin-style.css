@@ -1,0 +1,71 @@
+.nfe_subscriber_edit_form__row {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.nfe_subscriber_edit_form__row label {
+  width: 100px;
+}
+.nfe_subscriber_edit_form__row input {
+  width: 300px;
+}
+
+.button-send-data {
+  background-color: rgba(84, 148, 67, 0.933);
+  color: #f0f0f0;
+  padding: 10px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  outline: none;
+  cursor: pointer;
+}
+
+.button-clean-data {
+  background-color: #f0f0f0;
+  color: rgba(84, 148, 67, 0.933);
+  padding: 10px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(84, 148, 67, 0.933);
+  outline: none;
+  cursor: pointer;
+}
+
+.nfe_subscriber_edit_form__buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+#subscriber-data .postbox-header {
+  background-color: rgba(85, 148, 67, 0.481);
+}
+
+/* 
+newsletter forms
+*/
+
+#form-data .inside table {
+  width: 100%;
+}
+#form-data .inside table tr td {
+  text-align: center;
+  min-width: 170px;
+}
+#form-data .inside table tr td:first-child {
+  max-width: 80px;
+  width: 80px;
+  min-width: unset;
+}
+#form-data .inside table tr td *:not(input[type="checkbox"]) {
+  width: 100%;
+}
+#form-data td,
+#form-data th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
