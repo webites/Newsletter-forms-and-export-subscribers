@@ -1,0 +1,24 @@
+{
+  "name": "newsletter-forms-and-export",
+  "version": "1.0.0",
+  "description": "Wordpress plugin in free version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-default": "sass --watch assets/sass/templates/form-default.scss assets/css/templates/frontend-default.css",
+    "watch-inline": "sass --watch assets/sass/templates/form-inline.scss assets/css/templates/frontend-inline.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webites/Newsletter-forms-and-export-subscribers.git"
+  },
+  "author": "webites.pl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webites/Newsletter-forms-and-export-subscribers/issues"
+  },
+  "homepage": "https://github.com/webites/Newsletter-forms-and-export-subscribers#readme",
+  "dependencies": {
+    "sass": "^1.62.0"
+  }
+}

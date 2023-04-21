@@ -21,22 +21,3 @@ use Newsletter\Core\Subscribers\Listing;
 
 new Listing;
 new FormListing;
-
-
-// test
-
-
-add_action('wp_ajax_nopriv_iteration_array_display_items', 'iteration_array_display_items', 10, 1);
-add_action('wp_ajax_iteration_array_display_items', 'iteration_array_display_items', 10, 1);
-
-function iteration_array_display_items()
-{
-    echo "<div style='margin:2rem 0; border:1px solid;'>";
-    echo "rekord : " . $_POST['i'] . ' / ' . $_POST['count'] . '<br>';
-    echo $_POST['key'] . '<br>';
-    echo $_POST['item'] . '<br>';
-
-    echo "</div>";
-
-    wp_die();
-}

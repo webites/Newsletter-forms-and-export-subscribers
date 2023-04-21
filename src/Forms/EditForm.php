@@ -28,7 +28,7 @@ class EditForm
     public static function edit_form_data()
     {
         $data = ItemForm::get_meta_of_newsletter()[0];
-        var_dump($data);
+        // var_dump($data);
         if (!empty($data)) {
             include ABSPATH . "wp-content/plugins/newsletter-forms-and-export/src/templates/newsletter-form.php";
         } else {
@@ -44,6 +44,13 @@ class EditForm
 
     protected static function sanitizing_data_before_save($posted_data): array
     {
+        // settings
+
+        $sanitized_data['header'] = sanitize_text_field($posted_data['header']);
+        $sanitized_data['description'] = sanitize_text_field($posted_data['description']);
+        $sanitized_data['theme'] = sanitize_text_field($posted_data['theme']);
+
+
         // name
         $sanitized_data['name']['enabled'] = sanitize_text_field($posted_data['name']['enabled']);
         $sanitized_data['name']['label'] = sanitize_text_field($posted_data['name']['label']);
@@ -63,6 +70,10 @@ class EditForm
         $sanitized_data['email']['enabled'] = sanitize_text_field($posted_data['email']['enabled']);
         $sanitized_data['email']['label'] = sanitize_text_field($posted_data['email']['label']);
         $sanitized_data['email']['text'] = sanitize_textarea_field($posted_data['email']['text']);
+
+        // accept
+
+        $sanitized_data['accept']['text'] = sanitize_textarea_field($posted_data['accept']['text']);
 
         // submit
         $sanitized_data['submit']['label'] = sanitize_text_field($posted_data['submit']['label']);

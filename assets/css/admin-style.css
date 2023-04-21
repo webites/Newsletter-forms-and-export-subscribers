@@ -11,6 +11,20 @@
   width: 300px;
 }
 
+.nfe_newsletter_edit-row {
+  display: flex;
+  margin: 12px 0;
+}
+.nfe_newsletter_edit-row label {
+  width: 100px;
+  font-weight: bold;
+}
+.nfe_newsletter_edit-row input[type="text"],
+.nfe_newsletter_edit-row textarea,
+.nfe_newsletter_edit-row select {
+  width: 100%;
+}
+
 .button-send-data {
   background-color: rgba(84, 148, 67, 0.933);
   color: #f0f0f0;

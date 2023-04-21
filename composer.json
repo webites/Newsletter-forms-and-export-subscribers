@@ -4,7 +4,10 @@
   "autoload": {
     "psr-4": {
       "Newsletter\\Core\\": "src/"
-    }
+    },
+    "files": [
+      "src/Functions/forms_sending.php"
+    ]
   },
   "authors": [
     {

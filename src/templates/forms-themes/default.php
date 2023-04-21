@@ -6,9 +6,21 @@ if (isset($_POST['nfe_subscriber'])) {
     $user_add = new Add($_POST);
     $user_add->save();
 }
+global $post;
 ?>
+<link rel="stylesheet" href="<?php ABSPATH ?>/wp-content/plugins/newsletter-forms-and-export/assets/css/templates/frontend-default.css">
+
 <form method="post">
     <div class="nfe_newsletter_form nfe_newsletter_form--default">
+        <?php nfes_get_form_respond_msg(); ?>
+        <?php wp_nonce_field('newsletter-form-' . $post->ID); ?>
+        <input type="hidden" name="post_id" value="<?php echo $post->ID ?>">
+        <?php if ($data['header']) {
+            echo "<h2>" . esc_html($data['header']) . "</h2>";
+        } ?>
+        <?php if ($data['description']) {
+            echo "<p class='big-description'>" . esc_html($data['description']) . "</p>";
+        } ?>
         <?php if ($data['name']['enabled']) : ?>
             <div class="nfe_newsletter_form__row">
                 <label for="nfe_subscriber_name"><?php _e($data['name']['label'], 'newsletterplugin') ?></label>
@@ -47,47 +59,14 @@ if (isset($_POST['nfe_subscriber'])) {
             <!-- <div class='display-iteration'>iteration</div> -->
 
         <?php endif; ?>
+        <div class="nfe_newsletter_form__row">
+            <div class="acceptance">
+                <input type="checkbox" name="nfe_subscriber[accept]" id="nfe_subscriber_accept">
+                <label for="nfe_subscriber_accept"><?php _e($data['accept']['text'], 'newsletterplugin') ?></label>
+            </div>
+        </div>
 
         <input type="submit" value="<?php _e($data['submit']['label'], 'newsletterplugin') ?>">
 
     </div>
 </form>
-
-
-<?php
-/*$data = [
-    'man' => 'Lukasz',
-    'woman' => 'Dominika',
-    'kid' => 'Pola'
-];
-$i = 1;
-foreach ($data as  $key => $item) {
-    $array_count = count($data);
-    echo '<script>
-    jQuery(document).ready(function ($) {
-        function iteration_array_display_items() {
-            var my_param = "my_param_value";
-          $.ajax({
-            url: "http://" + window.location.hostname + "/wp-admin/admin-ajax.php",
-            type: "POST",
-            data: {
-              action: "iteration_array_display_items",
-              item: "' . $item . '",
-              key: "' . $key . '",
-              i: "' . $i . '",
-              count: "' . $array_count . '"
-
-            },
-            success: function (data) {
-              $(".display-iteration").append(  "<div>" + data + "</div>"  );
-            },
-          });
-        }
-    
-        iteration_array_display_items();
-      });
-
-    </script>';
-    $i++;
-}
-*/

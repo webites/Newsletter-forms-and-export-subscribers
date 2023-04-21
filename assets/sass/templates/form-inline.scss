@@ -1,0 +1,48 @@
+$blue: #84acce;
+$violet: #827191;
+
+.nfe_newsletter_form--inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .nfe_newsletter_form {
+    &__row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    &__item {
+      position: relative;
+      width: 350px;
+      & .description {
+        display: none;
+      }
+      label {
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        font-size: 14px;
+        padding: 3px 5px;
+        transition: all 0.3s ease-in-out;
+      }
+      input {
+        height: 40px;
+        border: 1px solid $violet;
+        border-radius: 0;
+        width: 100%;
+
+        &:focus-visible {
+          border: none;
+          box-shadow: 0 0 25px 10px rgba($violet, 0.4);
+          outline: none;
+          & ~ label {
+            transform: translateY(-20px);
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+}

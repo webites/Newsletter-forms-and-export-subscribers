@@ -1,9 +1,35 @@
 <?php
 
 use Newsletter\Core\Forms\ItemForm;
-
-var_dump(ItemForm::get_meta_of_newsletter()); ?>
+// var_dump(ItemForm::get_meta_of_newsletter()); 
+?>
 <form method="post" class="nfe_newsletter_edit_form">
+    <div class="nfe_newsletter_edit-row">
+        <label for="nfe_newsletter_form_header"><?php _e('Nagłówek') ?></label>
+        <input type="text" name="nfe_newsletter_form[header]" id="nfe_newsletter_form_header" value="<?php if (isset($data['header'])) {
+                                                                                                            $data['header'] ? esc_attr_e($data['header']) : '';
+                                                                                                        } ?>">
+    </div>
+    <div class="nfe_newsletter_edit-row">
+        <label for="nfe_newsletter_form_description"><?php _e('Opis') ?></label>
+        <textarea name="nfe_newsletter_form[description]" id="nfe_newsletter_form_description" cols="50" rows="5">
+        <?php if (isset($data['description'])) {
+            $data['description'] ? esc_attr_e($data['description']) : '';
+        } ?>
+        </textarea>
+    </div>
+    <div class="nfe_newsletter_edit-row">
+        <label for="nfe_newsletter_form_theme"><?php _e('Wybierz motyw graficzny', 'newsletterplugin') ?></label>
+        <select name="nfe_newsletter_form[theme]" id="nfe_newsletter_form_theme">
+            <option value="default" disabled><?php _e('Wybierz motyw', 'newsletterplugin'); ?></option>
+            <option value="default" <?php echo $data['theme'] == 'default' ? 'selected' : '' ?>>
+                <?php _e('Domyślny', 'newsletterplugin'); ?>
+            </option>
+            <option value="inline" <?php echo $data['theme'] == 'inline' ? 'selected' : '' ?>>
+                <?php _e('W jednej linii', 'newsletterplugin') ?>
+            </option>
+        </select>
+    </div>
     <table>
         <tr>
             <th><?php _e('Włączone/wyłączone', 'newsletterplugin') ?></th>
@@ -85,6 +111,19 @@ var_dump(ItemForm::get_meta_of_newsletter()); ?>
             <td><textarea name="nfe_newsletter_form[email][text]" id="nfe_newsletter_form_email_text">
             <?php if (isset($data['email']['text'])) {
                 $data['email']['text'] ? esc_attr_e($data['email']['text']) : '';
+            }
+            ?>
+            </textarea></td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" name="accept" id="nfe_newsletter_form_accept_enabled" disabled checked>
+            </td>
+            <td><strong><?php _e('Tekst zgody', 'newsletterplugin') ?></strong></td>
+            <td><i>text</i></td>
+            <td colspan="2"><textarea name="nfe_newsletter_form[accept][text]" id="nfe_newsletter_form_accept_text">
+            <?php if (isset($data['accept']['text'])) {
+                $data['accept']['text'] ? esc_attr_e($data['accept']['text']) : '';
             }
             ?>
             </textarea></td>
