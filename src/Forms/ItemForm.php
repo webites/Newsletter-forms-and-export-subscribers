@@ -1,6 +1,6 @@
 <?php
 
-namespace Newsletter\Core\Forms;
+namespace NFES_Newsletter\Core\Forms;
 
 class ItemForm
 {
@@ -18,7 +18,7 @@ class ItemForm
             add_meta_box(
                 'form-data',
                 __('Konfiguracja formularza', 'newsletterplugin'),
-                array('Newsletter\Core\Forms\EditForm', 'edit_form_data'),
+                array('NFES_Newsletter\Core\Forms\EditForm', 'edit_form_data'),
                 'nfe_forms'
             );
         });
@@ -26,7 +26,7 @@ class ItemForm
             add_meta_box(
                 'shortcode-to-display-form',
                 __('Wyświetl formularz za pomocą shortcode', 'newsletterplugin'),
-                array('Newsletter\Core\Forms\EditForm', 'display_newsletter_from_shortcode'),
+                array('NFES_Newsletter\Core\Forms\EditForm', 'display_newsletter_from_shortcode'),
                 'nfe_forms'
             );
         });

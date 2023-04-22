@@ -2,11 +2,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #84acce;
+  padding: 24px;
+}
+.nfe_newsletter_form--inline h2 {
+  color: #827191;
+}
+.nfe_newsletter_form--inline p.big-description {
+  margin-top: 0;
+}
+.nfe_newsletter_form--inline .nfes__message--success {
+  color: #827191;
+  border-bottom: 1px solid #827191;
+}
+.nfe_newsletter_form--inline .nfes__message--info {
+  color: #84acce;
+  border-bottom: 1px solid #84acce;
+}
+.nfe_newsletter_form--inline .nfes__message--warning {
+  color: orangered;
+  border-bottom: 1px solid orangered;
 }
 .nfe_newsletter_form--inline .nfe_newsletter_form__row {
   display: flex;
   justify-content: center;
   gap: 18px;
+}
+@media screen and (max-width: 1200px) {
+  .nfe_newsletter_form--inline .nfe_newsletter_form__row--rwd {
+    flex-direction: column;
+  }
 }
 .nfe_newsletter_form--inline .nfe_newsletter_form__item {
   position: relative;
@@ -37,6 +62,32 @@
 .nfe_newsletter_form--inline .nfe_newsletter_form__item input:focus-visible ~ label {
   transform: translateY(-20px);
   background-color: white;
+}
+.nfe_newsletter_form--inline .acceptance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.nfe_newsletter_form--inline .acceptance input {
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+}
+.nfe_newsletter_form--inline input[type=submit] {
+  width: 250px;
+  height: 40px;
+  background-color: #84acce;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  text-transform: uppercase;
+}
+.nfe_newsletter_form--inline input[type=submit]:hover {
+  background-color: rgba(132, 172, 206, 0.8);
 }
 
 /*# sourceMappingURL=frontend-inline.css.map */

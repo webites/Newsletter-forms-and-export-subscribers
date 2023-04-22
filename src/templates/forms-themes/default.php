@@ -1,15 +1,15 @@
 <?php
 
-use Newsletter\Core\Subscribers\Add;
+use NFES_Newsletter\Core\Subscribers\SubscriberAdd;
+use NFES_Newsletter\Core\Subscribers\SubscriberItem;
 
 if (isset($_POST['nfe_subscriber'])) {
-    $user_add = new Add($_POST);
+    $user_add = new SubscriberAdd($_POST);
     $user_add->save();
 }
 global $post;
 ?>
 <link rel="stylesheet" href="<?php ABSPATH ?>/wp-content/plugins/newsletter-forms-and-export/assets/css/templates/frontend-default.css">
-
 <form method="post">
     <div class="nfe_newsletter_form nfe_newsletter_form--default">
         <?php nfes_get_form_respond_msg(); ?>
@@ -54,14 +54,14 @@ global $post;
                 <p class="description">
                     <?php _e($data['email']['text'], 'newsletterplugin') ?>
                 </p>
-                <input type="email" name="nfe_subscriber[email]" id="nfe_subscriber_email">
+                <input type="email" name="nfe_subscriber[email]" id="nfe_subscriber_email" required>
             </div>
             <!-- <div class='display-iteration'>iteration</div> -->
 
         <?php endif; ?>
         <div class="nfe_newsletter_form__row">
             <div class="acceptance">
-                <input type="checkbox" name="nfe_subscriber[accept]" id="nfe_subscriber_accept">
+                <input type="checkbox" name="nfe_subscriber[accept]" id="nfe_subscriber_accept" required>
                 <label for="nfe_subscriber_accept"><?php _e($data['accept']['text'], 'newsletterplugin') ?></label>
             </div>
         </div>

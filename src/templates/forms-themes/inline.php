@@ -1,9 +1,9 @@
 <?php
 
-use Newsletter\Core\Subscribers\Add;
+use NFES_Newsletter\Core\Subscribers\SubscriberAdd;
 
 if (isset($_POST['nfe_subscriber'])) {
-    $user_add = new Add($_POST);
+    $user_add = new SubscriberAdd($_POST);
     $user_add->save();
 }
 global $post;
@@ -21,10 +21,10 @@ global $post;
             echo "<h2>" . esc_html($data['header']) . "</h2>";
         } ?>
         <?php if ($data['description']) {
-            echo "<p class='description'>" . esc_html($data['description']) . "</p>";
+            echo "<p class='big-description'>" . esc_html($data['description']) . "</p>";
         } ?>
 
-        <div class="nfe_newsletter_form__row">
+        <div class="nfe_newsletter_form__row nfe_newsletter_form__row--rwd">
             <?php if ($data['name']['enabled']) : ?>
                 <div class="nfe_newsletter_form__item">
                     <input type="text" name="nfe_subscriber[name]" id="nfe_subscriber_name">
@@ -54,7 +54,7 @@ global $post;
             <?php endif; ?>
             <?php if ($data['email']['enabled']) : ?>
                 <div class="nfe_newsletter_form__item">
-                    <input type="email" name="nfe_subscriber[email]" id="nfe_subscriber_email">
+                    <input type="email" name="nfe_subscriber[email]" id="nfe_subscriber_email" required>
                     <label for="nfe_subscriber_email"><?php _e($data['email']['label'], 'newsletterplugin') ?></label>
                     <p class="description">
                         <?php _e($data['email']['text'], 'newsletterplugin') ?>
@@ -66,7 +66,7 @@ global $post;
         </div>
         <div class="nfe_newsletter_form__row">
             <div class="acceptance">
-                <input type="checkbox" name="nfe_subscriber[accept]" id="nfe_subscriber_accept">
+                <input type="checkbox" name="nfe_subscriber[accept]" id="nfe_subscriber_accept" required>
                 <label for="nfe_subscriber_accept"><?php _e($data['accept']['text'], 'newsletterplugin') ?></label>
             </div>
         </div>

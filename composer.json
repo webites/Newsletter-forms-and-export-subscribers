@@ -3,10 +3,11 @@
   "type": "wordpress-plugin",
   "autoload": {
     "psr-4": {
-      "Newsletter\\Core\\": "src/"
+      "NFES_Newsletter\\Core\\": "src/"
     },
     "files": [
-      "src/Functions/forms_sending.php"
+      "src/Functions/forms_sending.php",
+      "src/Functions/admin_notices.php"
     ]
   },
   "authors": [

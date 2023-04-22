@@ -1,6 +1,6 @@
 <?php
 
-namespace Newsletter\Core\Forms;
+namespace NFES_Newsletter\Core\Forms;
 
 
 class RenderForm

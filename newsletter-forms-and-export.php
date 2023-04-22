@@ -16,8 +16,14 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/assets/load.php');
 
-use Newsletter\Core\Forms\FormListing;
-use Newsletter\Core\Subscribers\Listing;
+use NFES_Newsletter\Core\Forms\FormListing;
+use NFES_Newsletter\Core\Settings\MenuPage;
+use NFES_Newsletter\Core\Export\ExportCsv;
+use NFES_Newsletter\Core\Subscribers\SubscriberListing;
 
-new Listing;
+new SubscriberListing;
 new FormListing;
+new MenuPage;
+
+
+// test

@@ -1,3 +1,9 @@
+$plum: #963484;
+$dark-blue: #3066be;
+$blue: #60afff;
+$light-blue: #28c2ff;
+$aqua: #2af5ff;
+
 .nfe_subscriber_edit_form__row {
   display: flex;
   align-items: center;
@@ -7,7 +13,6 @@
 .nfe_subscriber_edit_form__row label {
   width: 100px;
 }
-
 .nfe_subscriber_edit_form__row input {
   width: 300px;
 }
@@ -16,13 +21,11 @@
   display: flex;
   margin: 12px 0;
 }
-
 .nfe_newsletter_edit-row label {
   width: 100px;
   font-weight: bold;
 }
-
-.nfe_newsletter_edit-row input[type=text],
+.nfe_newsletter_edit-row input[type="text"],
 .nfe_newsletter_edit-row textarea,
 .nfe_newsletter_edit-row select {
   width: 100%;
@@ -65,73 +68,84 @@
 /* 
   newsletter forms
   */
+
 #form-data .inside table {
   width: 100%;
 }
-
 #form-data .inside table tr td {
   text-align: center;
   min-width: 170px;
 }
-
 #form-data .inside table tr td:first-child {
   max-width: 80px;
   width: 80px;
   min-width: unset;
 }
-
-#form-data .inside table tr td *:not(input[type=checkbox]) {
+#form-data .inside table tr td *:not(input[type="checkbox"]) {
   width: 100%;
 }
-
 #form-data td,
 #form-data th {
   border: 1px solid #dddddd;
   padding: 8px;
 }
 
-.nfes__admin-title {
-  padding: 18px 28px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.nfes__admin-row {
-  padding: 18px 28px;
-}
-.nfes__admin-row__header h2 {
-  font-size: 24px;
-}
-.nfes__admin-row--listing {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #60afff;
-  border-radius: 4px;
-  margin: 12px 0;
-  margin-right: 28px;
-}
-.nfes__breadcrumbs h1 {
-  color: #28c2ff;
-}
-.nfes__breadcrumbs h1 .separator {
-  color: #60afff;
-}
-.nfes__breadcrumbs h1 .main {
-  color: #3066be;
-}
-.nfes__button {
-  padding: 8px 32px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.nfes__button--delete {
-  border: 1px solid #963484;
-  color: lightgray;
-  background-color: orangered;
-}
-.nfes__button--delete:hover {
-  background-color: rgba(255, 69, 0, 0.7);
-  color: #3066be;
-}
+// admin settings page
 
-/*# sourceMappingURL=admin-style.css.map */
+.nfes {
+  &__admin {
+    &-title {
+      padding: 18px 28px;
+      background-color: #f0f0f0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &-row {
+      padding: 18px 28px;
+      &__header {
+        h2 {
+          font-size: 24px;
+        }
+      }
+      &--listing {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid $blue;
+        border-radius: 4px;
+        margin: 12px 0;
+        margin-right: 28px;
+      }
+    }
+  }
+
+  &__breadcrumbs {
+    h1 {
+      color: $light-blue;
+
+      & .separator {
+        color: $blue;
+      }
+      & .main {
+        color: $dark-blue;
+      }
+    }
+  }
+
+  &__button {
+    padding: 8px 32px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &--delete {
+      border: 1px solid $plum;
+      color: lightgray;
+      background-color: orangered;
+
+      &:hover {
+        background-color: rgba(orangered, 0.7);
+        color: $dark-blue;
+      }
+    }
+  }
+}

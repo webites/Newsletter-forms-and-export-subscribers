@@ -1,8 +1,8 @@
 <?php
 
-namespace Newsletter\Core\Forms;
+namespace NFES_Newsletter\Core\Forms;
 
-use Newsletter\Core\Forms\EditForm;
+use NFES_Newsletter\Core\Forms\EditForm;
 
 class FormListing
 {

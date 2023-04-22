@@ -1,15 +1,15 @@
 <?php
 
-namespace Newsletter\Core\Subscribers;
+namespace NFES_Newsletter\Core\Subscribers;
 
-class Listing
+class SubscriberListing
 {
     public function __construct()
     {
         self::create_cpt_newsletter_subscribers();
-        new Item;
+        new SubscriberItem;
         if ('subscribers' == get_post_type()) {
-            new Edit;
+            new SubscriberEdit;
         }
     }
 
@@ -21,7 +21,7 @@ class Listing
                 'name'                => _x('Subskrybenci', 'Post Type General Name', 'newsletterplugin'),
                 'singular_name'       => _x('Subskrybent', 'Post Type Singular Name', 'newsletterplugin'),
                 'menu_name'           => __('Subskrybenci', 'newsletterplugin'),
-                'parent_item_colon'   => __('PSubskrybent - rodzic', 'newsletterplugin'),
+                'parent_item_colon'   => __('Subskrybent - rodzic', 'newsletterplugin'),
                 'all_items'           => __('Wszyscy subskrybenci', 'newsletterplugin'),
                 'view_item'           => __('Zobacz subskrybenta', 'newsletterplugin'),
                 'add_new_item'        => __('Dodaj nowego subskrybenta', 'newsletterplugin'),

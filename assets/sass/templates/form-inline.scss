@@ -5,12 +5,42 @@ $violet: #827191;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: $blue;
+  padding: 24px;
+
+  h2 {
+    color: $violet;
+  }
+  p.big-description {
+    margin-top: 0;
+  }
+
+  & .nfes__message {
+    &--success {
+      color: $violet;
+      border-bottom: 1px solid $violet;
+    }
+    &--info {
+      color: $blue;
+      border-bottom: 1px solid $blue;
+    }
+    &--warning {
+      color: orangered;
+      border-bottom: 1px solid orangered;
+    }
+  }
 
   & .nfe_newsletter_form {
     &__row {
       display: flex;
       justify-content: center;
       gap: 18px;
+
+      &--rwd {
+        @media screen and (max-width: 1200px) {
+          flex-direction: column;
+        }
+      }
     }
 
     &__item {
@@ -43,6 +73,34 @@ $violet: #827191;
           }
         }
       }
+    }
+  }
+  & .acceptance {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    input {
+      width: 18px;
+      height: 18px;
+      border-radius: 0;
+    }
+  }
+
+  input[type="submit"] {
+    width: 250px;
+    height: 40px;
+    background-color: $blue;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: rgba($blue, 0.8);
     }
   }
 }

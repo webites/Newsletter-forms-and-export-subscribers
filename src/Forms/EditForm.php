@@ -1,8 +1,8 @@
 <?php
 
-namespace Newsletter\Core\Forms;
+namespace NFES_Newsletter\Core\Forms;
 
-use Newsletter\Core\Forms\ItemForm;
+use NFES_Newsletter\Core\Forms\ItemForm;
 
 /*
 * Edit Form class for service editing cpt - Form

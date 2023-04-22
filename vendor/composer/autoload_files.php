@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '57ce53e7a27b001b96781fe1b09f9320' => $baseDir . '/src/Functions/forms_sending.php',
+    '4a53a32340914b12853ea9dea1440624' => $baseDir . '/src/Functions/admin_notices.php',
 );

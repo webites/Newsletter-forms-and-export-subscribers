@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-default": "sass --watch assets/sass/templates/form-default.scss assets/css/templates/frontend-default.css",
-    "watch-inline": "sass --watch assets/sass/templates/form-inline.scss assets/css/templates/frontend-inline.css"
+    "watch-inline": "sass --watch assets/sass/templates/form-inline.scss assets/css/templates/frontend-inline.css",
+    "watch-admin": "sass --watch assets/sass/admin-style.scss assets/css/admin-style.css"
   },
   "repository": {
     "type": "git",

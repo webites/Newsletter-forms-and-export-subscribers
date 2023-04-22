@@ -1,10 +1,10 @@
 <?php
 
-namespace Newsletter\Core\Subscribers;
+namespace NFES_Newsletter\Core\Subscribers;
 
-use Newsletter\Core\Subscribers\Item;
+use NFES_Newsletter\Core\Subscribers\SubscriberItem;
 
-class Edit
+class SubscriberEdit
 {
     public function __construct()
     {
@@ -22,7 +22,7 @@ class Edit
 
     public static function edit_subscriber_data()
     {
-        $data = Item::get_meta_of_subscribers()[0];
+        $data = SubscriberItem::get_meta_of_subscribers()[0];
         if (!empty($data)) {
             include ABSPATH . "wp-content/plugins/newsletter-forms-and-export/src/templates/subscriber-form.php";
         } else {

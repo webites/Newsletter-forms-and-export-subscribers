@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Newsletter\\Core\\' => array($baseDir . '/src'),
+    'NFES_Newsletter\\Core\\' => array($baseDir . '/src'),
 );

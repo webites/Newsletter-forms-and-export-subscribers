@@ -8,17 +8,18 @@ class ComposerStaticInit970be8d985b13f0a53da50a1562763b1
 {
     public static $files = array (
         '57ce53e7a27b001b96781fe1b09f9320' => __DIR__ . '/../..' . '/src/Functions/forms_sending.php',
+        '4a53a32340914b12853ea9dea1440624' => __DIR__ . '/../..' . '/src/Functions/admin_notices.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'N' => 
         array (
-            'Newsletter\\Core\\' => 16,
+            'NFES_Newsletter\\Core\\' => 21,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Newsletter\\Core\\' => 
+        'NFES_Newsletter\\Core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

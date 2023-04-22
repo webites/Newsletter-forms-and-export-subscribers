@@ -1,4 +1,3 @@
-<?php var_dump($data) ?>
 <form method="post" class="nfe_subscriber_edit_form">
     <div class="nfe_subscriber_edit_form__row">
         <label for="nfe_subscriber_data_name"><?php _e('Imię', 'newsletterplugin') ?></label>
