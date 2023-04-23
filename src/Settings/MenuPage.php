@@ -2,6 +2,9 @@
 
 namespace NFES_Newsletter\Core\Settings;
 
+use NFES_Newsletter\Core\Export\Export;
+use NFES_Newsletter\Core\Export\ExportCsv;
+
 class MenuPage
 {
     public function __construct()
@@ -36,6 +39,18 @@ class MenuPage
     }
     public function settings_page_export()
     {
-        include 'templates/settings_settings_page_export.php';
+        if (isset($_GET['nfes_delete_file'])) {
+            ExportCsv::delete_export_file($_GET['nfes_delete_file']);
+        } else if (isset($_GET['nfes_create_export']) && $_GET['nfes_create_export'] == 1) {
+            ExportCsv::export_data();
+        } else {
+            include 'templates/settings_settings_page_export.php';
+        }
+    }
+    public static function test_redirect()
+    {
+        echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
+        // header("Location: http://test-local.local/wp-admin/admin.php?page=nfes_settings_export", true, 301);
+        die();
     }
 }

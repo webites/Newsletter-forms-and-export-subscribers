@@ -13,3 +13,16 @@ function letDataAnominous() {
     input.value = "anonim@anonim.com";
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const exportButtonShowLink = document.querySelectorAll(
+    ".nfes-export-button-show-link"
+  );
+  exportButtonShowLink.forEach((exportBtn) => {
+    exportBtn.addEventListener("click", () => {
+      exportBtn
+        .closest(".nfes__admin-row")
+        .classList.toggle("nfes__admin-row--show-links");
+    });
+  });
+});

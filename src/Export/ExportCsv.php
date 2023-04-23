@@ -27,7 +27,8 @@ class ExportCsv extends Export
                 600
             );
 
-            return $file_name;
+            // return $file_name;
+            echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
         } else {
             set_transient(
                 'export_data_result',
@@ -37,6 +38,7 @@ class ExportCsv extends Export
                 ],
                 600
             );
+            echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
         }
     }
 }

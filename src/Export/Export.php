@@ -48,4 +48,18 @@ class Export
         $timestamp = strtotime(date('c'));
         return fopen(self::EXPORT_DIR . "/subscribers-" . $timestamp . "." . $extension, "w");
     }
+
+    public static function delete_export_file(string $file_name, string $extension = 'csv')
+    {
+        wp_delete_file(self::EXPORT_DIR  . '/subscribers-' . $file_name . '.' . $extension);
+        set_transient(
+            'export_data_result',
+            [
+                'text' => __('Usunięto plik eksportu', 'newsletterplugin'),
+                'type' => 'success'
+            ],
+            600
+        );
+        echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
+    }
 }

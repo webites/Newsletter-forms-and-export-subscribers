@@ -98,6 +98,12 @@ $aqua: #2af5ff;
       padding: 18px 28px;
       background-color: #f0f0f0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      &--row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
 
     &-row {
@@ -115,6 +121,26 @@ $aqua: #2af5ff;
         border-radius: 4px;
         margin: 12px 0;
         margin-right: 28px;
+      }
+
+      &__actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      & .nfes__export-link {
+        display: none;
+      }
+
+      &--show-links {
+        & .nfes__export-link {
+          display: flex;
+        }
       }
     }
   }
@@ -144,6 +170,26 @@ $aqua: #2af5ff;
 
       &:hover {
         background-color: rgba(orangered, 0.7);
+        color: $dark-blue;
+      }
+    }
+    &--success {
+      border: 1px solid darkgray;
+      color: darkgreen;
+      background-color: greenyellow;
+
+      &:hover {
+        background-color: rgba(greenyellow, 0.7);
+        color: $dark-blue;
+      }
+    }
+    &--info {
+      border: 1px solid $blue;
+      color: black;
+      background-color: $blue;
+
+      &:hover {
+        background-color: rgba($blue, 0.7);
         color: $dark-blue;
       }
     }

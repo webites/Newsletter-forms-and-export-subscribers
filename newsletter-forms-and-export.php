@@ -21,9 +21,10 @@ use NFES_Newsletter\Core\Settings\MenuPage;
 use NFES_Newsletter\Core\Export\ExportCsv;
 use NFES_Newsletter\Core\Subscribers\SubscriberListing;
 
+new MenuPage;
 new SubscriberListing;
 new FormListing;
-new MenuPage;
+
 
 
 // test
