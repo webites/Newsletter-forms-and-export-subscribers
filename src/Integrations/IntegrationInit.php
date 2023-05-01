@@ -14,4 +14,13 @@ class IntegrationInit
         update_option('nfes_settings_integrations_' . $integration_name, $sanitize);
     }
 
+    /**
+     * @param $integration - integration slug
+     * @return false|mixed|null
+     */
+    public static function get_settings($integration)
+    {
+        return get_option('nfes_settings_integrations_' . $integration , true);
+    }
+
 }
