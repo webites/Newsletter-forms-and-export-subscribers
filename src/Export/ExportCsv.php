@@ -3,7 +3,6 @@
 namespace NFES_Newsletter\Core\Export;
 
 use NFES_Newsletter\Core\Export\Export;
-use NFES_Newsletter\Core\Subscribers\SubscriberItem;
 
 class ExportCsv extends Export
 {
@@ -26,9 +25,7 @@ class ExportCsv extends Export
                 ],
                 600
             );
-
-            // return $file_name;
-            echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
+            echo "<script>location.href = '/wp-admin/admin.php?page=nfes_settings_export';</script>";
         } else {
             set_transient(
                 'export_data_result',
@@ -38,7 +35,7 @@ class ExportCsv extends Export
                 ],
                 600
             );
-            echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
+            echo "<script>location.href = '/wp-admin/admin.php?page=nfes_settings_export';</script>";
         }
     }
 }

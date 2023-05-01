@@ -27,6 +27,7 @@ global $post;
         <div class="nfe_newsletter_form__row nfe_newsletter_form__row--rwd">
             <?php if ($data['name']['enabled']) : ?>
                 <div class="nfe_newsletter_form__item">
+                    <span class="nfe_newsletter_form_tip"></span>
                     <input type="text" name="nfe_subscriber[name]" id="nfe_subscriber_name">
                     <label for="nfe_subscriber_name"><?php _e($data['name']['label'], 'newsletterplugin') ?></label>
                     <p class="description">
@@ -36,6 +37,7 @@ global $post;
             <?php endif; ?>
             <?php if ($data['surname']['enabled']) : ?>
                 <div class="nfe_newsletter_form__item">
+                    <span class="nfe_newsletter_form_tip"></span>
                     <input type="text" name="nfe_subscriber[surname]" id="nfe_subscriber_surname">
                     <label for="nfe_subscriber_surname"><?php _e($data['surname']['label'], 'newsletterplugin') ?></label>
                     <p class="description">
@@ -45,6 +47,7 @@ global $post;
             <?php endif; ?>
             <?php if ($data['phone']['enabled']) : ?>
                 <div class="nfe_newsletter_form__item">
+                    <span class="nfe_newsletter_form_tip"></span>
                     <input type="tel" name="nfe_subscriber[phone]" id="nfe_subscriber_phone" min="9" max="12">
                     <label for="nfe_subscriber_phone"><?php _e($data['phone']['label'], 'newsletterplugin') ?></label>
                     <p class="description">
@@ -54,6 +57,7 @@ global $post;
             <?php endif; ?>
             <?php if ($data['email']['enabled']) : ?>
                 <div class="nfe_newsletter_form__item">
+                    <span class="nfe_newsletter_form_tip"></span>
                     <input type="email" name="nfe_subscriber[email]" id="nfe_subscriber_email" required>
                     <label for="nfe_subscriber_email"><?php _e($data['email']['label'], 'newsletterplugin') ?></label>
                     <p class="description">

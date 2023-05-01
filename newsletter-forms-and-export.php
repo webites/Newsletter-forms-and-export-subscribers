@@ -20,11 +20,20 @@ use NFES_Newsletter\Core\Forms\FormListing;
 use NFES_Newsletter\Core\Settings\MenuPage;
 use NFES_Newsletter\Core\Export\ExportCsv;
 use NFES_Newsletter\Core\Subscribers\SubscriberListing;
+use NFES_Newsletter\Core\Integrations\Engine;
 
 new MenuPage;
 new SubscriberListing;
 new FormListing;
+new Engine;
 
 
+$integrations_options = Engine::get_integrations_options();
+foreach ($integrations_options as $integration_name => $integration_state) {
+    if($integration_state){
+        $integration_info = call_user_func(["\NFES_Newsletter\Core\Integrations\\$integration_name\Init", "logic"]);
+    }
+
+}
 
 // test

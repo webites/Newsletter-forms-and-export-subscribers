@@ -21,6 +21,14 @@ class MenuPage
                 65
             );
 
+            add_submenu_page(
+                'nfes_settings',
+                __('Integracje', 'newsletterplugin'),
+                __('Integracje', 'newsletterplugin'),
+                'manage_options',
+                'nfes_settings_integrations',
+                [$this, 'settings_page_integrations']
+            );
 
             add_submenu_page(
                 'nfes_settings',
@@ -30,6 +38,7 @@ class MenuPage
                 'nfes_settings_export',
                 [$this, 'settings_page_export']
             );
+
         });
     }
 
@@ -47,10 +56,8 @@ class MenuPage
             include 'templates/settings_settings_page_export.php';
         }
     }
-    public static function test_redirect()
+    public function settings_page_integrations()
     {
-        echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
-        // header("Location: http://test-local.local/wp-admin/admin.php?page=nfes_settings_export", true, 301);
-        die();
+        include 'templates/settings_settings_page_integrations.php';
     }
 }

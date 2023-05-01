@@ -60,6 +60,7 @@ class Export
             ],
             600
         );
-        echo "<script>location.href = 'http://test-local.local/wp-admin/admin.php?page=nfes_settings_export';</script>";
+        $wp_url = get_bloginfo('wpurl');
+        echo "<script>location.href = '".$wp_url."wp-admin/admin.php?page=nfes_settings_export';</script>";
     }
 }
