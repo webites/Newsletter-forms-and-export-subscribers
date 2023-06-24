@@ -1,7 +1,5 @@
 <?php
-
 use Newsletter\Core\Forms\ItemForm;
-// var_dump(ItemForm::get_meta_of_newsletter());
 ?>
 <form method="post" class="nfe_newsletter_edit_form">
     <div class="nfe_newsletter_edit-row">

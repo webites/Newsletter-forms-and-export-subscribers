@@ -7,7 +7,7 @@ use NFES_Newsletter\Core\Forms\ItemForm;
 /*
 * Edit Form class for service editing cpt - Form
 *
-* 
+*
 */
 
 class EditForm
@@ -28,7 +28,6 @@ class EditForm
     public static function edit_form_data()
     {
         $data = ItemForm::get_meta_of_newsletter()[0];
-        // var_dump($data);
         if (!empty($data)) {
             include ABSPATH . "wp-content/plugins/newsletter-forms-and-export/src/templates/newsletter-form.php";
         } else {

@@ -36,7 +36,13 @@ foreach (Engine::get_all_integrations() as $integration){
         <div class="buttons-row">
         <form method="post" class="button-when-disable">
             <input type="hidden" name="integrations[<?php echo $integration_name ?>]" value="<?php echo !$integrations_options[$integration_name] ?>">
+            <?php
+            if($integration_name == 'Mailchimp'){
+                echo "<span class='integration-soon'>" . __('Integracja wkrótce', 'newsletterplugin') . "</span>";
+            } else {
+            ?>
             <input type="submit" value="<?php _e('Integruj', 'newsletterplugin'); ?>" class="button button-primary">
+            <?php } ?>
         </form>
         <form method="post" class="button-when-enable">
             <input type="hidden" name="integrations[<?php echo $integration_name ?>]" value="<?php echo !$integrations_options[$integration_name] ?>">
