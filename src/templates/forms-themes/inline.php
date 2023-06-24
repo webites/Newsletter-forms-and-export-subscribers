@@ -25,7 +25,7 @@ global $post;
         } ?>
 
         <div class="nfe_newsletter_form__row nfe_newsletter_form__row--rwd">
-            <?php if ($data['name']['enabled']) : ?>
+            <?php if ( $data['name']['enabled'] ?? false ) : ?>
                 <div class="nfe_newsletter_form__item">
                     <span class="nfe_newsletter_form_tip"></span>
                     <input type="text" name="nfe_subscriber[name]" id="nfe_subscriber_name">
@@ -35,7 +35,7 @@ global $post;
                     </p>
                 </div>
             <?php endif; ?>
-            <?php if ($data['surname']['enabled']) : ?>
+            <?php if ( $data['surname']['enabled'] ?? false ) : ?>
                 <div class="nfe_newsletter_form__item">
                     <span class="nfe_newsletter_form_tip"></span>
                     <input type="text" name="nfe_subscriber[surname]" id="nfe_subscriber_surname">
@@ -45,7 +45,7 @@ global $post;
                     </p>
                 </div>
             <?php endif; ?>
-            <?php if ($data['phone']['enabled']) : ?>
+            <?php if ( $data['phone']['enabled'] ?? false ) : ?>
                 <div class="nfe_newsletter_form__item">
                     <span class="nfe_newsletter_form_tip"></span>
                     <input type="tel" name="nfe_subscriber[phone]" id="nfe_subscriber_phone" min="9" max="12">
@@ -55,7 +55,7 @@ global $post;
                     </p>
                 </div>
             <?php endif; ?>
-            <?php if ($data['email']['enabled']) : ?>
+            <?php if ( $data['email']['enabled'] ?? false ) : ?>
                 <div class="nfe_newsletter_form__item">
                     <span class="nfe_newsletter_form_tip"></span>
                     <input type="email" name="nfe_subscriber[email]" id="nfe_subscriber_email" required>

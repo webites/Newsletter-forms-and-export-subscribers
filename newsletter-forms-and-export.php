@@ -2,13 +2,15 @@
 
 /*
  * Plugin Name:       Newsletter forms and export subscribers
- * Plugin URI:        https://webites.pl/
+ * Plugin URI:        https://webites.pl/wtyczka-do-newsletterow-w-wordpressie/
  * Description:       Let create simple forms to subscribe your newsletter, save in database and export to your mail provider.
  * Version:           1.0.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            weBites
  * Author URI:        https://webites.pl/
+ * License:           GPLv2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       newsletterplugin
  * Domain Path:       /languages
  */

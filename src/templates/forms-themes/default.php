@@ -21,7 +21,7 @@ global $post;
         <?php if ($data['description']) {
             echo "<p class='big-description'>" . esc_html($data['description']) . "</p>";
         } ?>
-        <?php if ($data['name']['enabled']) : ?>
+        <?php if ( $data['name']['enabled'] ?? false ) : ?>
             <div class="nfe_newsletter_form__row">
                 <label for="nfe_subscriber_name"><?php _e($data['name']['label'], 'newsletterplugin') ?></label>
                 <p class="description">
@@ -30,7 +30,7 @@ global $post;
                 <input type="text" name="nfe_subscriber[name]" id="nfe_subscriber_name">
             </div>
         <?php endif; ?>
-        <?php if ($data['surname']['enabled']) : ?>
+        <?php if ( $data['surname']['enabled'] ?? false ) : ?>
             <div class="nfe_newsletter_form__row">
                 <label for="nfe_subscriber_surname"><?php _e($data['surname']['label'], 'newsletterplugin') ?></label>
                 <p class="description">
@@ -39,7 +39,7 @@ global $post;
                 <input type="text" name="nfe_subscriber[surname]" id="nfe_subscriber_surname">
             </div>
         <?php endif; ?>
-        <?php if ($data['phone']['enabled']) : ?>
+        <?php if ( $data['phone']['enabled'] ?? false ) : ?>
             <div class="nfe_newsletter_form__row">
                 <label for="nfe_subscriber_phone"><?php _e($data['phone']['label'], 'newsletterplugin') ?></label>
                 <p class="description">
@@ -48,7 +48,7 @@ global $post;
                 <input type="tel" name="nfe_subscriber[phone]" id="nfe_subscriber_phone" min="9" max="12">
             </div>
         <?php endif; ?>
-        <?php if ($data['email']['enabled']) : ?>
+        <?php if ( $data['email']['enabled'] ?? false ) : ?>
             <div class="nfe_newsletter_form__row">
                 <label for="nfe_subscriber_email"><?php _e($data['email']['label'], 'newsletterplugin') ?></label>
                 <p class="description">
