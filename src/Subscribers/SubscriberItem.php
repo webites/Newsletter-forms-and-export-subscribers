@@ -38,11 +38,12 @@ class SubscriberItem
     public static function isset_subscriber_in_db(string $email): bool
     {
         $isset = false;
-        $subscribers_list = new \WP_Query(['post_type' => 'subscribers']);
+        $subscribers_list = new \WP_Query(['post_type' => 'subscribers', 'posts_per_page' => -1]);
         if ($subscribers_list->have_posts()) {
 
             while ($subscribers_list->have_posts()) {
                 $subscribers_list->the_post();
+                global $post;
                 $subscriber_data = self::get_meta_of_subscriber_by_id(get_the_ID());
                 if ($email == $subscriber_data['email']) {
                     $isset = true;

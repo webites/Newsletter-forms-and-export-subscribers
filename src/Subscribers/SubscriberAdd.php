@@ -20,9 +20,9 @@ class SubscriberAdd
     */
     public function __construct($posted_data)
     {
-        $this->name = sanitize_text_field($posted_data['nfe_subscriber']['name']);
-        $this->surname = sanitize_text_field($posted_data['nfe_subscriber']['surname']);
-        $this->phone = sanitize_text_field($posted_data['nfe_subscriber']['phone']);
+        $this->name = !empty($posted_data['nfe_subscriber']['name']) ? sanitize_text_field($posted_data['nfe_subscriber']['name']) : '';
+        $this->surname = !empty($posted_data['nfe_subscriber']['surname']) ? sanitize_text_field($posted_data['nfe_subscriber']['surname']) : '';
+        $this->phone = !empty($posted_data['nfe_subscriber']['phone']) ? sanitize_text_field($posted_data['nfe_subscriber']['phone']) : '';
         $this->email = sanitize_email($posted_data['nfe_subscriber']['email']);
         $this->nonce = $posted_data['_wpnonce'];
         $this->post_id = $posted_data['post_id'];
@@ -33,7 +33,7 @@ class SubscriberAdd
         if (wp_verify_nonce($this->nonce, 'newsletter-form-' . $this->post_id)) {
             if (!SubscriberItem::isset_subscriber_in_db($this->email)) {
                 $id = wp_insert_post([
-                    'post_title' => $this->email . ' : ' . $this->name . ' ' . $this->surname,
+                    'post_title' => $this->email ,
                     'post_type' => 'subscribers',
                     'post_status' => 'publish'
                 ]);
@@ -49,11 +49,14 @@ class SubscriberAdd
                 );
 
                 nfes_set_form_respond_msg(__("Prawidłowo zapisano do newslettera. Gratulujemy", 'newsletterplugin'), "success");
+                do_action('nfes_subscriber_saved__success', [$id, $this->post_id]);
             } else {
                 nfes_set_form_respond_msg(__("Taki adres istnieje juz na liście", 'newsletterplugin'), "info");
+                do_action('nfes_subscriber_saved__duplicated', [null, $this->post_id]);
             }
         } else {
             nfes_set_form_respond_msg(__("Wystąpił błąd bezpieczenstwa", 'newsletterplugin'), "warning");
+            do_action('nfes_subscriber_saved__security_error', [null, $this->post_id]);
         }
     }
 }

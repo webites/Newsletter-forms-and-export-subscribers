@@ -3,7 +3,7 @@
         <h1><?php _e('Ustawienia newslettera', 'newsletterplugin') ?><span class="separator"> > </span> <span class="main"> <?php _e('Ustawienia główne', 'newsletterplugin') ?></span> </h1>
     </div>
 </div>
-
+<?php nfes_admin_notice_display_general() ?>
 <div class="nfes__admin-row">
     <div class="nfes__admin-row__header">
         <h2><?php _e('Dodatki', 'newsletterplugin') ?></h2>

@@ -14,8 +14,8 @@ global $post;
     <div class="nfe_newsletter_form nfe_newsletter_form--inline">
 
         <?php nfes_get_form_respond_msg(); ?>
-        <?php wp_nonce_field('newsletter-form-' . $post->ID); ?>
-        <input type="hidden" name="post_id" value="<?php echo $post->ID ?>">
+        <?php wp_nonce_field('newsletter-form-' . $data['post_id']); ?>
+        <input type="hidden" name="post_id" value="<?php echo $data['post_id'] ?>">
 
         <?php if ($data['header']) {
             echo "<h2>" . esc_html($data['header']) . "</h2>";

@@ -3,6 +3,10 @@
   align-items: center;
   margin: 12px 0;
 }
+.nfe_subscriber_edit_form__row--centered {
+  align-items: center;
+  gap: 8px;
+}
 
 .nfe_subscriber_edit_form__row label {
   width: 100px;
@@ -15,6 +19,10 @@
 .nfe_newsletter_edit-row {
   display: flex;
   margin: 12px 0;
+}
+.nfe_newsletter_edit-row--centered {
+  align-items: center;
+  gap: 8px;
 }
 
 .nfe_newsletter_edit-row label {
@@ -103,6 +111,10 @@
 .nfes__admin-row {
   padding: 18px 28px;
 }
+.nfes__admin-row--centered {
+  align-items: center;
+  gap: 8px;
+}
 .nfes__admin-row__header h2 {
   font-size: 24px;
 }
@@ -128,6 +140,10 @@
 }
 .nfes__admin-row--show-links .nfes__export-link {
   display: flex;
+}
+.nfes__admin__icon {
+  width: 20px;
+  height: 20px;
 }
 .nfes__breadcrumbs h1 {
   color: #28c2ff;
@@ -208,6 +224,10 @@
 .nfes_integration__single .ratings-img {
   width: 16px;
   height: 16px;
+}
+.nfes_integrations {
+  display: flex;
+  gap: 20px;
 }
 .nfes_column_form {
   display: flex;

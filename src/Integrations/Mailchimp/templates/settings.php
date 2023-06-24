@@ -10,7 +10,7 @@ $settings = Init::get_settings('mailchimp');
         <h1><?php _e('Integracje', 'newsletterplugin') ?> <span class="separator"> > </span> <span class="main"> <?php _e('Mailchimp', 'newsletterplugin') ?></span> </h1>
     </div>
 </div>
-
+<?php nfes_admin_notice_display_general() ?>
 <div class="nfes__admin-row">
     <h2><?php _e('Dane podstawowe', 'newsletterplugin'); ?></h2>
     <form method="post" class="nfes_column_form">

@@ -1,7 +1,7 @@
 <?php
 
 use Newsletter\Core\Forms\ItemForm;
-// var_dump(ItemForm::get_meta_of_newsletter()); 
+// var_dump(ItemForm::get_meta_of_newsletter());
 ?>
 <form method="post" class="nfe_newsletter_edit_form">
     <div class="nfe_newsletter_edit-row">
@@ -12,10 +12,7 @@ use Newsletter\Core\Forms\ItemForm;
     </div>
     <div class="nfe_newsletter_edit-row">
         <label for="nfe_newsletter_form_description"><?php _e('Opis') ?></label>
-        <textarea name="nfe_newsletter_form[description]" id="nfe_newsletter_form_description" cols="50" rows="5">
-        <?php if (isset($data['description'])) {
-            $data['description'] ? esc_attr_e($data['description']) : '';
-        } ?>
+        <textarea name="nfe_newsletter_form[description]" id="nfe_newsletter_form_description" cols="50" rows="5"><?php if (isset($data['description'])) { $data['description'] ? esc_attr_e($data['description']) : ''; } ?>
         </textarea>
     </div>
     <div class="nfe_newsletter_edit-row">
@@ -49,10 +46,7 @@ use Newsletter\Core\Forms\ItemForm;
             <td><input type="text" name="nfe_newsletter_form[name][label]" id="nfe_newsletter_form_name_label" value="<?php if (isset($data['name']['label'])) {
                                                                                                                             $data['name']['label'] ? esc_attr_e($data['name']['label']) : '';
                                                                                                                         } ?>"></td>
-            <td><textarea name="nfe_newsletter_form[name][text]" id="nfe_newsletter_form_name_text">
-            <?php if (isset($data['name']['text'])) {
-                $data['name']['text'] ? esc_attr_e($data['name']['text']) : '';
-            }
+            <td><textarea name="nfe_newsletter_form[name][text]" id="nfe_newsletter_form_name_text"><?php if (isset($data['name']['text'])) { $data['name']['text'] ? esc_attr_e($data['name']['text']) : ''; }
             ?>
             </textarea></td>
         </tr>
@@ -69,10 +63,7 @@ use Newsletter\Core\Forms\ItemForm;
                                                                                                                                 $data['surname']['label'] ? esc_attr_e($data['surname']['label'])  : '';
                                                                                                                             } ?>">
             </td>
-            <td><textarea name="nfe_newsletter_form[surname][text]" id="nfe_newsletter_form_surname_text">
-            <?php if (isset($data['surname']['text'])) {
-                $data['surname']['text'] ? esc_attr_e($data['surname']['text']) : '';
-            }
+            <td><textarea name="nfe_newsletter_form[surname][text]" id="nfe_newsletter_form_surname_text"><?php if (isset($data['surname']['text'])) { $data['surname']['text'] ? esc_attr_e($data['surname']['text']) : ''; }
             ?>
             </textarea></td>
         </tr>
@@ -89,10 +80,7 @@ use Newsletter\Core\Forms\ItemForm;
                                                                                                                             $data['phone']['label'] ? esc_attr_e($data['phone']['label'])  : '';
                                                                                                                         } ?>">
             </td>
-            <td><textarea name="nfe_newsletter_form[phone][text]" id="nfe_newsletter_form_phone_text">
-            <?php if (isset($data['phone']['text'])) {
-                $data['phone']['text'] ? esc_attr_e($data['phone']['text']) : '';
-            }
+            <td><textarea name="nfe_newsletter_form[phone][text]" id="nfe_newsletter_form_phone_text"><?php if (isset($data['phone']['text'])) { $data['phone']['text'] ? esc_attr_e($data['phone']['text']) : ''; }
             ?>
             </textarea></td>
         </tr>
@@ -108,11 +96,7 @@ use Newsletter\Core\Forms\ItemForm;
                                                                                                                             $data['email']['label'] ? esc_attr_e($data['email']['label'])  : '';
                                                                                                                         } ?>">
             </td>
-            <td><textarea name="nfe_newsletter_form[email][text]" id="nfe_newsletter_form_email_text">
-            <?php if (isset($data['email']['text'])) {
-                $data['email']['text'] ? esc_attr_e($data['email']['text']) : '';
-            }
-            ?>
+            <td><textarea name="nfe_newsletter_form[email][text]" id="nfe_newsletter_form_email_text"><?php if (isset($data['email']['text'])) { $data['email']['text'] ? esc_attr_e($data['email']['text']) : ''; }  ?>
             </textarea></td>
         </tr>
 
@@ -121,11 +105,7 @@ use Newsletter\Core\Forms\ItemForm;
             </td>
             <td><strong><?php _e('Tekst zgody', 'newsletterplugin') ?></strong></td>
             <td><i>text</i></td>
-            <td colspan="2"><textarea name="nfe_newsletter_form[accept][text]" id="nfe_newsletter_form_accept_text">
-            <?php if (isset($data['accept']['text'])) {
-                $data['accept']['text'] ? esc_attr_e($data['accept']['text']) : '';
-            }
-            ?>
+            <td colspan="2"><textarea name="nfe_newsletter_form[accept][text]" id="nfe_newsletter_form_accept_text"><?php if (isset($data['accept']['text'])) { $data['accept']['text'] ? esc_attr_e($data['accept']['text']) : ''; } ?>
             </textarea></td>
         </tr>
 

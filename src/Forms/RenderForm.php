@@ -10,7 +10,9 @@ class RenderForm
         add_shortcode('nfe_newslerrer_form', function ($atts) {
             $query = new \WP_Query(['post_type' => 'nfe_forms', 'p' => $atts['id']]);
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+                    global $post;
                     $data = ItemForm::get_meta_of_newsletter()[0];
+                    $data['post_id'] = $post->ID;
 
                     switch ($data['theme']) {
                         case 'inline':

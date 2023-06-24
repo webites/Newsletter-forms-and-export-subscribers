@@ -5,12 +5,6 @@ class Engine
     public function __construct(){
         register_setting('general', 'nfes_settings_integrations_enabled');
         self::use_enabled_integrations();
-//        $integrations = self::get_integrations_options();
-//        foreach ($integrations as $name => $integration){
-//            if($integration){
-//                call_user_func(["\NFES_Newsletter\Core\Integrations\\$name\Init", "logic"]);
-//            }
-//        }
     }
 
 
@@ -18,7 +12,14 @@ class Engine
     {
         $options = get_option('nfes_settings_integrations_enabled', false) ? get_option('nfes_settings_integrations_enabled', false) : [];
         $options[$integration_name] = $enable;
-        return update_option('nfes_settings_integrations_enabled', $options);
+        if( update_option('nfes_settings_integrations_enabled', $options)){
+            nfes_create_admin_notice(
+                [
+                    'text' => $enable ? __('Integracja została włączona ', 'newsletterplugin') : __('Integracja została wyłączona', 'newsletterplugin'),
+                    'type' => 'success'
+                ]
+            );
+        }
     }
 
     public static function use_enabled_integrations()

@@ -8,7 +8,7 @@ use NFES_Newsletter\Core\Integrations\IntegrationInit;
 class Init extends IntegrationInit
 {
     const SLUG = 'mailchimp';
-    public string $name;
+    const NAME = 'Mailchimp';
     public string $url;
     public string $version;
     public string $description;
@@ -31,7 +31,7 @@ class Init extends IntegrationInit
 
     public static function logic()
     {
-        parent::register_integration_settings(self::SLUG);
+        parent::register_integration_settings(self::SLUG, self::NAME);
 
     }
 

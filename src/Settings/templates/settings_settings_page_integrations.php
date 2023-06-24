@@ -12,14 +12,17 @@ if(!empty($_POST['integrations'])){
         <h1><?php _e('Dodatki', 'newsletterplugin') ?> <span class="separator"> > </span> <span class="main"> <?php _e('Integracje', 'newsletterplugin') ?></span> </h1>
     </div>
 </div>
-<?php
+<?php nfes_admin_notice_display_general();
 
 $integrations_options = Engine::get_integrations_options();
-
-foreach ($integrations_options as $integration_name => $integration_state){
+?>
+<div class="nfes_integrations">
+<?php
+foreach (Engine::get_all_integrations() as $integration){
+    $integration_name = array_slice(explode("/", $integration), -2, 1)[0];
     $integration_info = call_user_func(["\NFES_Newsletter\Core\Integrations\\$integration_name\Init", "initialize"]);
     ?>
-    <div class="card nfes_integration__single <?php echo $integration_state ? 'enabled' : 'disabled' ?>">
+    <div class="card nfes_integration__single <?php echo $integrations_options[$integration_name] ? 'enabled' : 'disabled' ?>">
         <h2 class="title">
             <?php _e($integration_name, 'newsletterplugin') ?>
             <span class="version"><?php echo $integration_info['version'] ?></span>
@@ -32,15 +35,19 @@ foreach ($integrations_options as $integration_name => $integration_state){
         </p>
         <div class="buttons-row">
         <form method="post" class="button-when-disable">
-            <input type="hidden" name="integrations[<?php echo $integration_name ?>]" value="<?php echo !$integration_state ?>">
+            <input type="hidden" name="integrations[<?php echo $integration_name ?>]" value="<?php echo !$integrations_options[$integration_name] ?>">
             <input type="submit" value="<?php _e('Integruj', 'newsletterplugin'); ?>" class="button button-primary">
         </form>
         <form method="post" class="button-when-enable">
-            <input type="hidden" name="integrations[<?php echo $integration_name ?>]" value="<?php echo !$integration_state ?>">
+            <input type="hidden" name="integrations[<?php echo $integration_name ?>]" value="<?php echo !$integrations_options[$integration_name] ?>">
             <input type="submit" value="<?php _e('Wyłącz integrację', 'newsletterplugin'); ?>" class="button button-primary">
         </form>
-        <a href="<?php echo $integration_info['url']  ?>" target="_blank" class="button button-when-disable"><?php _e('Załóż konto', 'newsletterplugin'); ?></a>
+            <?php if($integration_info['url']){ ?>
+                <a href="<?php echo $integration_info['url']  ?>" target="_blank" class="button button-when-disable"><?php _e('Załóż konto', 'newsletterplugin'); ?></a>
+           <?php } ?>
+
         <a href="<?php echo get_bloginfo('wpurl') . '/wp-admin/admin.php?page=nfes_settings_' . $integration_name  ?>" class="button button-when-enable"><?php _e('Ustawienia integracji', 'newsletterplugin'); ?></a>
         </div>
     </div>
 <?php } ?>
+</div>

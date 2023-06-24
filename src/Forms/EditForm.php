@@ -15,7 +15,7 @@ class EditForm
     public function __construct()
     {
         add_action('save_post', function () {
-            if (isset($_POST) && !!$_POST['nfe_newsletter_form']) {
+            if (isset($_POST) && !empty($_POST['nfe_newsletter_form'])) {
                 global $post;
 
                 $sanitized_data = self::sanitizing_data_before_save($_POST['nfe_newsletter_form']);

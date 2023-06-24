@@ -8,6 +8,11 @@ $aqua: #2af5ff;
   display: flex;
   align-items: center;
   margin: 12px 0;
+
+  &--centered{
+    align-items: center;
+    gap: 8px;
+  }
 }
 
 .nfe_subscriber_edit_form__row label {
@@ -20,6 +25,11 @@ $aqua: #2af5ff;
 .nfe_newsletter_edit-row {
   display: flex;
   margin: 12px 0;
+
+  &--centered{
+    align-items: center;
+    gap: 8px;
+  }
 }
 .nfe_newsletter_edit-row label {
   width: 100px;
@@ -108,6 +118,11 @@ $aqua: #2af5ff;
 
     &-row {
       padding: 18px 28px;
+
+      &--centered{
+        align-items: center;
+        gap: 8px;
+      }
       &__header {
         h2 {
           font-size: 24px;
@@ -142,6 +157,11 @@ $aqua: #2af5ff;
           display: flex;
         }
       }
+    }
+
+    &__icon{
+      width: 20px;
+      height: 20px;
     }
   }
 
@@ -249,6 +269,11 @@ $aqua: #2af5ff;
       }
 
     }
+
+  }
+  &_integrations{
+    display: flex;
+    gap: 20px;
   }
 
   &_column{
